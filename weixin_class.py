@@ -71,7 +71,11 @@ class Weixin(object):
             self._load_ticket()
             return True
 
-    # --------上传自动回复（图片）---------------------
+    # --------上传关注事件回复（图片）---------------------
+    """
+    当用户关注公众账号时，返回一张图片
+    该函数用于该图片的上传
+    """
     def upload_img(self, file_name):
         url = 'https://mp.weixin.qq.com/cgi-bin/filetransfer?action=upload_material&f=json&scene=5' \
               '&writetype=doublewrite&groupid=1&ticket_id={ticket_id}' \
@@ -98,6 +102,10 @@ class Weixin(object):
 
     # -------上传自动回复的图片后，保存设置使之生效----------
     def confirm_img(self):
+    """
+    当用户关注公众账号时，返回一张图片
+    该函数用于上传图片成功后，保存设置使之生效
+    """
         url = "https://mp.weixin.qq.com/advanced/setreplyrule?cgi=setreplyrule&fun=save&t=ajax-response" \
               "&token={token}&lang=zh_CN".format(
                 token=self._token
