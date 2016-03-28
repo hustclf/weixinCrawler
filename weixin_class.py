@@ -274,7 +274,7 @@ class Weixin(object):
     
 if __name__ == '__main__':
 
-    weixin = Weixin("dangang8691@163.com", "xxx8888")
+    weixin = Weixin("xxxxx", "xxxxx")
     if weixin.status == False:
         print("Login failed")
         sys.exit(-1)
