@@ -272,8 +272,8 @@ class Weixin(object):
         message = json.loads(r.text)
         print(message)
     
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     weixin = Weixin("xxxxx", "xxxxx")
     if weixin.status == False:
         print("Login failed")
